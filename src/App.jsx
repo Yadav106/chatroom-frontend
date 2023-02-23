@@ -36,6 +36,8 @@ function App() {
 	}
 
 	const sendMessage = async () => {
+
+		if(message == '') return;
 		
 		let messageContent = {
 			room: room,
