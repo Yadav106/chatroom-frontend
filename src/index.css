@@ -1,0 +1,269 @@
+* {
+  margin: 0;
+}
+
+.App {
+  display: grid;
+  place-items: center;
+  height: 100vh;
+  background-color: #2a2730;
+}
+
+.logIn {
+  width: 600px;
+  height: 350px;
+  border: 3px solid #0091ff;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.logIn input {
+  margin: 10px;
+  width: 200px;
+  height: 40px;
+  border: 3px solid #0091ff;
+  border-radius: 7px;
+  padding-left: 10px;
+  color: white;
+  font-size: 20px;
+  background-color: transparent;
+}
+
+.logIn input:focus {
+  outline: transparent;
+}
+
+.logIn button {
+  height: 40px;
+  width: 200px;
+  margin-top: 40px;
+  font-size: 20px;
+  border-radius: 7px;
+  border: none;
+  background-color: #0091ff;
+  color: white;
+  cursor: pointer;
+}
+
+.logIn button:hover {
+  background-color: #0770c1;
+}
+
+.chatContainer {
+  width: 600px;
+  height: 380px;
+  border: 3px solid #0091ff;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.messages {
+  flex: 80%;
+  width: 100%;
+  padding-left: 20px;
+  overflow-y: scroll;
+  overscroll-behavior-y: contain;
+  scroll-snap-type: y proximity;
+}
+
+.messages > .messageContainer:last-child {
+  scroll-snap-align: end;
+}
+
+.chatContainer .messageInputs {
+  flex: 20%;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+}
+
+.chatContainer .messageInputs input {
+  flex: 80%;
+  height: calc(100%-5px);
+  border: none;
+  border-top: 3px solid #0091ff;
+  padding-left: 10px;
+  color: white;
+  font-size: 25px;
+  background-color: transparent;
+}
+
+.chatContainer .messageInputs button {
+  flex: 20%;
+  height: 100%;
+  font-size: 20px;
+  border: none;
+  background-color: #0091ff;
+  color: white;
+  cursor: pointer;
+}
+
+.chatContainer .messageInputs button:hover {
+  background-color: #0770c1;
+}
+
+.messageContainer {
+  display: flex;
+  align-items: center;
+}
+
+.messageContainer > h1 {
+  color: wheat;
+  font-family: 'Arial', sans-serif;
+  font-weight: 300;
+  font-size: 17px;
+  max-width: 100px;
+  max-height: 40px;
+  overflow: scroll;
+}
+
+.messageIndividual {
+  max-width: 300px;
+  min-height: 60px;
+  overflow-y: scroll;
+  display: grid;
+  place-items: center;
+  border-radius: 10px;
+  background-color: #0091ff;
+  color: white;
+  font-family: 'Arial', sans-serif;
+  margin-right: 5px;
+  margin-top: 20px;
+  padding: 10px;
+}
+
+#you {
+  display: flex;
+  justify-content: flex-end;
+}
+
+#you > h1 {
+  visibility: hidden;
+}
+
+#other {
+  display: flex;
+}
+
+#other .messageIndividual{
+  background-color: rgb(28, 222, 28);
+  color: #2a2730;
+  width: 280px;
+}
+
+.roominfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-left: 20px;
+  margin-bottom: 5px;
+  color: white;
+  font-family: 'Arial', sans-serif;
+  /* overflow: scroll; */
+  /* max-width: 400px; */
+  /* background-color: antiquewhite; */
+}
+
+.roominfo > h1 {
+  font-size: 20px;
+  overflow: scroll;
+  max-width: 400px;
+}
+
+.logout {
+  height: 40px;
+  width: 100px;
+  background-color: red;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  float: right;
+  margin-top: 20px;
+  cursor: pointer;
+}
+
+@media only screen and (max-width: 700px) {
+  .logIn {
+    width: 90%;
+  }
+
+  .roominfo {
+    display: flex;
+    justify-content: space-around;
+    gap: 25px;
+    font-size: 10px;
+    color: white;
+    font-family: 'Arial', sans-serif;
+    margin-right: 40px;
+  }
+
+  .logIn .inputs {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+  }
+
+  .chatContainer {
+    margin-left: 10px;
+    width: 90%;
+    height: 550px;
+  }
+
+  .chatContainer .messageInputs input {
+    height: calc(100%-5px);
+    width: 60%;
+    border: none;
+    border-top: 2px solid #0091ff;
+    padding-left: 10px;
+    color: white;
+    font-size: 25px;
+    background-color: transparent;
+  }
+  
+  .chatContainer .messageInputs button {
+    height: 100%;
+    width: 40%;
+    font-size: 20px;
+    border: none;
+    background-color: #0091ff;
+    color: white;
+    cursor: pointer;
+  }
+
+  .logout {
+    height: 40px;
+    width: 100px;
+    background-color: red;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    margin-top: 20px;
+    float: left;
+    margin-left: 10px;
+  }
+
+  .messageIndividual {
+    min-height: 40px;
+  }
+
+  #you > .messageIndividual {
+    width: 60%;
+  }
+
+  #other > .messageIndividual {
+    width: 60%;
+  }
+
+  .messages {
+    flex: 90%;
+  }
+
+  .chatContainer .messageInputs {
+    flex: 10%;
+  }
+}
